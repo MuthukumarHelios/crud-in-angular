@@ -1,0 +1,37 @@
+<html ng-app="timelineApp1"> 
+<head>
+  <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+  <script src = "Timeline.js"></script>
+</head>
+<body>
+
+<div ng-controller="managerCtrl">   
+    <table class = "table">
+         <tr>
+             <th>Id: </th>
+            <th>Name:</th>
+            <th>age:</th>
+            <th>address:</th>
+         </tr>
+    <tr ng-repeat="man in manager">
+        <td>{{man.id}}</td>
+        <td>{{man.name}}</td>  
+        <td>{{man.age}}</td>
+        <td>{{man.Address}}</td>
+         <td> <input type="submit" value  = "modify" data-ng-click="bindSelected(mang)"/></td>
+        <td> <input type="submit" value  = "Delete" data-ng-click="deleteRow(mang)"/></td><br/>
+    </tr>
+  </table>
+  <h1>creation can be performed</h1>
+  <form ng-submit="addRow()" data-ng-click="bindSelected(mang)"> 
+      Enter name:
+      <input type="text"  ng-model="name"/><br/> 
+      Enter Age:
+       <input type="text" ng-model="age"/><br/>
+       Enter Address:
+      <input type="text" ng-model="Address"/><br/>    
+      <input type="submit" value  = "Create" ng-model=""/><br/>
+   </form>
+</div>
+</body>
+</html>
